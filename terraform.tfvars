@@ -1,30 +1,32 @@
 region = "us-east-1"
 
-vpc_cidr = "172.16.0.0/16" 
+vpc_cidr = "172.16.0.0/16"
 
-enable_dns_support = "true" 
+enable_dns_support = "true"
 
-enable_dns_hostnames = "true"  
+enable_dns_hostnames = "true"
 
-enable_classiclink = "false" 
+enable_classiclink = "false"
 
-enable_classiclink_dns_support = "false" 
+enable_classiclink_dns_support = "false"
 
-preferred_number_of_public_subnets = 2
+preferred_number_of_public_subnets = "2"
 
-preferred_number_of_private_subnets = 4
+preferred_number_of_private_subnets = "4"
 
-# enviroment_name = "production"
+environment = "production"
 
-# owner_email = "fredyspinks@gmail.com"
+ami = "ami-0b0af3577fe5e3532"
 
-# managed_by = "Terraform"
+keypair = "devops"
 
-# billing_account = "0123456789"
+db-username = "waledevops"
+
+db-password = "devops101"
 
 tags = {
-  Enviroment = "production"
-  Owner-Email ="fredyspinks@gmail.com"
-  Managed-By = "Terraform"
-  Billing-Account = "0123456789"
+  Enviroment      = "production" 
+  Owner-Email     = "infradev-segun@darey.io"
+  Managed-By      = "Terraform"
+  Billing-Account = "1234567890"
 }
