@@ -30,6 +30,14 @@ variable "preferred_number_of_private_subnets" {
   default = null
 }
 
+variable "environment_name" {
+  default = "production"
+}
+
+variable "name" {
+  default = "demo"
+}
+
 variable "tags" {
   description = "A mapping of tags to assign to all resources."
   type        = map(string)

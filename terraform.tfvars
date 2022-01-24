@@ -14,17 +14,17 @@ preferred_number_of_public_subnets = 2
 
 preferred_number_of_private_subnets = 4
 
-enviroment_name = "production"
+# enviroment_name = "production"
 
-owner_email = "fredyspinks@gmail.com"
+# owner_email = "fredyspinks@gmail.com"
 
-managed_by = "Terraform"
+# managed_by = "Terraform"
 
-billing_account = "0123456789"
+# billing_account = "0123456789"
 
 tags = {
-  Enviroment = var.enviroment_name
-  Owner-Email = var.owner_email
-  Managed-By = var.managed_by
-  Billing-Account = var.billing_account
+  Enviroment = "production"
+  Owner-Email ="fredyspinks@gmail.com"
+  Managed-By = "Terraform"
+  Billing-Account = "0123456789"
 }
