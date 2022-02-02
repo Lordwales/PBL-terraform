@@ -2,7 +2,7 @@
 
 # Create the certificate using a wildcard for all the domains created in walesdevops.ml
 resource "aws_acm_certificate" "walesdevops" {
-  domain_name       = "*.waledevops.ml"
+  domain_name       = "*.walesdevops.ml"
   validation_method = "DNS"
 }
 
@@ -64,26 +64,22 @@ resource "aws_route53_record" "wordpress" {
 
 # Create ALB
 resource "aws_lb" "ext-alb" {
-  name     = "ext-alb"
-  internal = false
-  security_groups = [
-    aws_security_group.ext-alb-sg.id,
-  ]
+  name            = var.name
+  internal        = false
+  security_groups = [var.public-sg]
 
-  subnets = [
-    aws_subnet.public[0].id,
-    aws_subnet.public[1].id
-  ]
+  subnets = [var.public-sbn-1,
+  var.public-sbn-2, ]
 
-   tags = merge(
+  tags = merge(
     var.tags,
     {
-      Name = "ACS-ext-alb"
+      Name = var.name
     },
   )
 
-  ip_address_type    = "ipv4"
-  load_balancer_type = "application"
+  ip_address_type    = var.ip_address_type
+  load_balancer_type = var.load_balancer_type
 }
 
 
@@ -111,7 +107,7 @@ resource "aws_lb_listener" "nginx-listner" {
   load_balancer_arn = aws_lb.ext-alb.arn
   port              = 443
   protocol          = "HTTPS"
-  certificate_arn   = aws_acm_certificate_validation.waledevops.certificate_arn
+  certificate_arn   = aws_acm_certificate_validation.walesdevops.certificate_arn
 
   default_action {
     type             = "forward"

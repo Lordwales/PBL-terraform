@@ -70,3 +70,16 @@ variable "master-password" {
   type        = string
   description = "RDS master password"
 }
+
+variable "private_subnets" {
+  type        = list(any)
+  description = "List of private subnets"
+  default     = ["10.0.2.0/24", "10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
+}
+
+variable "public_subnets" {
+  type        = list(any)
+  description = "list of public subnets"
+  default     = ["10.0.1.0/24", "10.0.3.0/24"]
+
+}

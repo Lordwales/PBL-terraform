@@ -5,24 +5,21 @@
 resource "aws_lb" "ialb" {
   name     = "ialb"
   internal = true
-  security_groups = [
-    aws_security_group.int-alb-sg.id,
-  ]
 
-  subnets = [
-    aws_subnet.private[0].id,
-    aws_subnet.private[1].id
-  ]
+  security_groups = [var.private-sg]
 
-  tags = merge(
+  subnets = [var.private-sbn-1,
+  var.private-sbn-2, ]
+
+    tags = merge(
     var.tags,
     {
       Name = "ACS-int-alb"
     },
   )
 
-  ip_address_type    = "ipv4"
-  load_balancer_type = "application"
+  ip_address_type    = var.ip_address_type
+  load_balancer_type = var.load_balancer_type
 }
 
 # --- target group  for wordpress -------

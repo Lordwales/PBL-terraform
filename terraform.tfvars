@@ -1,6 +1,6 @@
 region = "us-east-1"
 
-vpc_cidr = "172.16.0.0/16"
+vpc_cidr = "10.0.0.0/16"
 
 enable_dns_support = "true"
 
@@ -14,19 +14,17 @@ preferred_number_of_public_subnets = "2"
 
 preferred_number_of_private_subnets = "4"
 
-environment = "production"
-
 ami = "ami-0b0af3577fe5e3532"
 
-keypair = "devops"
+keypair = "default-ou"
 
-db-username = "waledevops"
+master-username = "waledevops"
 
-db-password = "devops101"
+master-password = "devops101"
 
 tags = {
   Enviroment      = "production" 
-  Owner-Email     = "infradev-segun@darey.io"
+  Owner-Email     = "tofadeolawale@gmail.com"
   Managed-By      = "Terraform"
   Billing-Account = "1234567890"
 }
