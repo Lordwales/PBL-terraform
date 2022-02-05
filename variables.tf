@@ -46,10 +46,10 @@ variable "tags" {
   default     = {}
 }
 
-variable "ami" {
-  type        = string
-  description = "AMI ID for the launch template"
-}
+# variable "ami" {
+#   type        = string
+#   description = "AMI ID for the launch template"
+# }
 
 variable "keypair" {
   type        = string
@@ -82,4 +82,32 @@ variable "public_subnets" {
   description = "list of public subnets"
   default     = ["10.0.1.0/24", "10.0.3.0/24"]
 
+}
+
+variable "environment" {
+  type        = string
+  description = "Enviroment"
+}
+
+variable "ami-bastion" {
+  type        = string
+  description = "AMI ID for the launch template"
+}
+
+
+variable "ami-web" {
+  type        = string
+  description = "AMI ID for the launch template"
+}
+
+
+variable "ami-nginx" {
+  type        = string
+  description = "AMI ID for the launch template"
+}
+
+
+variable "ami-sonar" {
+  type        = string
+  description = "AMI ID for the launch template"
 }
