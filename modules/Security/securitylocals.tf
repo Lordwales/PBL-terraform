@@ -1,9 +1,10 @@
+# creating dynamic ingress security groups
 locals {
   security_groups = {
     ext-alb-sg = {
       name        = "ext-alb-sg"
-      vpc_id      = aws_vpc.main.id
-      description = "Allow TLS inbound traffic"
+      description = "for external loadbalncer"
+
     }
 
     # security group for bastion
@@ -36,8 +37,11 @@ locals {
     datalayer-sg = {
       name        = "datalayer-sg"
       description = "data layer security group"
-
-
+    }
+    
+    compute-sg = {
+      name        = "compute-sg"
+      description = "compute security group"
     }
   }
 }
