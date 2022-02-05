@@ -1,5 +1,5 @@
 locals {
-  security_groups {
+  security_groups = {
     ext-alb-sg = {
       name        = "ext-alb-sg"
       vpc_id      = aws_vpc.main.id
