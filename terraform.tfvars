@@ -10,9 +10,9 @@ enable_classiclink = "false"
 
 enable_classiclink_dns_support = "false"
 
-preferred_number_of_public_subnets = "2"
+preferred_number_of_public_subnets = 2
 
-preferred_number_of_private_subnets = "4"
+preferred_number_of_private_subnets = 4
 
 ami = "ami-0b0af3577fe5e3532"
 
