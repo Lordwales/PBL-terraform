@@ -7,7 +7,7 @@ variable "vpc_cidr" {
   type = string
   description = "The VPC cidr"
 }
-
+ 
 variable "enable_dns_support" {
   type = bool
 }
